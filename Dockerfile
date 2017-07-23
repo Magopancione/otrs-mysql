@@ -15,9 +15,9 @@ RUN sed -i.bk -r '/^\[mysqld\]$/a max_allowed_packet=20M' /etc/my.cnf && \
     sed -i.bk -r '/^\[mysqld\]$/a collation-server = utf8_general_ci' /etc/my.cnf && \
     sed -i.bk -r "/^\[mysqld\]$/a init-connect=\'SET NAMES utf8\'" /etc/my.cnf && \
     sed -i.bk -r '/^\[mysqld\]$/a character-set-server = utf8' /etc/my.cnf
-run mkdir -p /var/lib/mysql
+#run mkdir -p /var/lib/mysql
 #Use a separate volume for data.
-#VOLUME [ "/var/lib/mysql" ]
+VOLUME [ "/var/lib/mysql" ]
 #EXPOSE 3306
 #Switch to mysql user back
 USER 27
